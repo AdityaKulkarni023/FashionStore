@@ -9,3 +9,6 @@ build/
 
 # Firebase Config
 firebase/config.js
+
+.env
+

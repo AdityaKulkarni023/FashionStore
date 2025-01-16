@@ -4,7 +4,7 @@ import { TrashIcon } from '@heroicons/react/24/outline';
 
 function Cart() {
   const { cart, removeFromCart, updateCartQuantity } = useCart();
-  const navigate = useNavigate(); // useNavigate hook
+  const navigate = useNavigate();
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -14,7 +14,6 @@ function Cart() {
   };
 
   const handleProceedToCheckout = () => {
-    // Navigate to checkout and pass the cart data through state
     navigate('/checkout', { state: { cart } });
   };
 
@@ -57,7 +56,7 @@ function Cart() {
                 </div>
                 <p className="text-gray-900 dark:text-white mt-2">₹{(item.price * item.quantity).toFixed(2)}</p>
               </div>
-              <button 
+              <button
                 onClick={() => removeFromCart(item.id, item.size)}
                 className="text-red-600 hover:text-red-700"
               >
